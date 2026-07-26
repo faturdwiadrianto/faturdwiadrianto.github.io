@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatur Dwi Adrianto - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --bg-card: #1f2937;
+            --bg-card-hover: #2d3748;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-blue: #38bdf8;
+            --accent-cyan: #06b6d4;
+            --accent-indigo: #6366f1;
+            --border-color: #374151;
+            --gradient-accent: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+            --shadow-glow: 0 0 25px rgba(56, 189, 248, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title-wrapper {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--accent-blue);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .title-underline {
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-accent);
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .contact-btn-nav {
+            padding: 0.6rem 1.3rem;
+            border-radius: 8px;
+            background: transparent;
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue) !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .contact-btn-nav:hover {
+            background: var(--gradient-accent);
+            color: #fff !important;
+            border-color: transparent;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .badge-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 30px;
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-pulse {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-title span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 0.85rem 2rem;
+            background: var(--gradient-accent);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-glow);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-secondary {
+            padding: 0.85rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-color: var(--accent-blue);
+        }
+
+        .hero-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            height: 2px;
+            background: var(--gradient-accent);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .profile-stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+
+        .bg-alt {
+            background-color: var(--bg-secondary);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .highlight-card {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.2rem;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .highlight-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .highlight-info h4 {
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        .highlight-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 11px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+            border: 3px solid var(--accent-blue);
+            z-index: 2;
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+
+        }
+
+        .role-title {
+            font-size: 1.25rem;
+            color: #ffffff;
+        }
+
+        .company-name {
+            color: var(--accent-blue);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .date-badge {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .experience-bullets {
+            list-style: none;
+        }
+
+        .experience-bullets li {
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .experience-bullets li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+        }
+
+        .skill-card-title svg {
+            color: var(--accent-blue);
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tag:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: var(--accent-blue);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .tag.highlight {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        /* Certification & Education Section */
+        .cert-edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .info-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-box-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 3.5rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .contact-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-4px);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-card span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .contact-card strong {
+            font-size: 1rem;
+            color: #fff;
+            word-break: break-all;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .cert-edu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none; /* Can be expanded with JS menu */
+            }
+            .timeline::before {
+                left: 15px;
+            }
+            .timeline-item {
+                padding-left: 45px;
+            }
+            .timeline-dot {
+                left: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-dot"></span>
+                Fatur Dwi Adrianto
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#experience">Pengalaman</a></li>
+                <li><a href="#skills">Keahlian</a></li>
+                <li><a href="#education">Pendidikan & Sertifikasi</a></li>
+            </ul>
+            <a href="#contact" class="contact-btn-nav">Hubungi Saya</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div>
+                <div class="badge-hero">
+                    <span class="badge-pulse"></span>
+                    CAD Designer & Electrical Engineer
+                </div>
+                <h1 class="hero-title">
+                    Mengembangkan Solusi <span>Otomasi & Desain Kelistrikan</span> Presisi
+                </h1>
+                <p class="hero-description">
+                    Lulusan S1 Pendidikan Teknik Elektro UNY (IPK 3.69) berpeminatan Otomasi Industri. berpengalaman dalam perancangan layout PCB menggunakan Allegro, pemeliharaan sistem PJU, dan edukasi teknik listrik.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn-primary">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Hubungi Saya
+                    </a>
+                    <a href="#experience" class="btn-secondary">
+                        Lihat Pengalaman
+                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.3rem;">Ringkasan Profil</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Fokus pada Inovasi Keteknikan, Otomasi Industri & Sistem Tenaga Listrik.</p>
+                
+                <div class="profile-stat-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">3.69</div>
+                        <div class="stat-label">IPK S1 UNY</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">AK3U</div>
+                        <div class="stat-label">Sertifikasi Kemenaker</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Software Teknik</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Keberhasilan Edukasi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section bg-alt" id="about">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <div class="section-subtitle">Tentang Saya</div>
+                <h2 class="section-title">Dedikasi & Kompetensi Keteknikan</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Saya merupakan lulusan <strong>S1 Pendidikan Teknik Elektro</strong> dari <strong>Universitas Negeri Yogyakarta</strong> dengan penguasaan mendalam terhadap prinsip-prinsip dasar teknik elektro, khususnya pada bidang sistem tenaga listrik, elektronika, dan otomasi industri.
+                    </p>
+                    <p>
+                        Memiliki semangat belajar yang tinggi, terbiasa bekerja dalam tim, serta terus mengikuti perkembangan teknologi dan inovasi keteknikan terkini. Terbuka terhadap tantangan profesional yang dapat memperluas kompetensi di bidang kelistrikan dan otomasi.
+                    </p>
+                </div>
+
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                        </div>
+                        <div class="highlight-info">
+                            <h4>Desain PCB & CAD Layout</h4>
+                            <p>Pengalaman profesional merancang layout PCB & skematik menggunakan Allegro CAD dengan efisiensi tinggi.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <div class="highlight-info">
+                            <h4>Otomasi Industri & PLC</h4>
+                            <p>Penguasaan kontrol pemrograman PLC (CX Programmer, ZelioSoft), pneumatik (Fluidsim), & sistem fleksibel (FMS).</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <div class="highlight-info">
+                            <h4>Keselamatan Kerja (K3)</h4>
+                            <p>Tersertifikasi Ahli K3 Umum Kemenaker RI untuk menjamin standar keselamatan operasional tinggi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <div class="section-subtitle">Karir Professional</div>
+                <h2 class="section-title">Pengalaman Kerja & Praktik</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="timeline">
+                <!-- Job 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="role-title">CAD Designer</h3>
+                                <div class="company-name">PT. Meister Sinergi Indonesia</div>
+                            </div>
+                            <span class="date-badge">April 2026 – Sekarang</span>
+                        </div>
+                        <ul class="experience-bullets">
+                            <li>Mendesain dan mengembangkan layout PCB sesuai spesifikasi teknis dan kebutuhan proyek menggunakan software CAD Allegro.</li>
+                            <li>Membuat skematik, routing jalur, serta penempatan komponen dengan mempertimbangkan aspek manufakturabilitas (DFM) dan performa integritas sinyal/rangkaian.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="role-title">Teknisi Seksi Penerangan Jalan Umum (PJU)</h3>
+                                <div class="company-name">Dinas Perhubungan Sleman (Magang)</div>
+                            </div>
+                            <span class="date-badge">Jan 2025 – Mar 2025</span>
+                        </div>
+                        <ul class="experience-bullets">
+                            <li>Melaksanakan pemeliharaan rutin serta penggantian komponen lampu Penerangan Jalan Umum (PJU) di wilayah Kabupaten Sleman.</li>
+                            <li>Melakukan perbaikan lampu PJU melalui identifikasi kerusakan teknis dan perbaikan komponen internal guna memastikan fungsi penerangan terdistribusi optimal.</li>
+                            <li>Memeriksa sistem penerangan jalan dan menganalisis perhitungan daya, tegangan, arus, serta pemecahan masalah (troubleshooting) pada jaringan PJU.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="role-title">Pendidik Teknik Ketenagalistrikan</h3>
+                                <div class="company-name">SMK Negeri 2 Pengasih (Praktik Kependidikan)</div>
+                            </div>
+                            <span class="date-badge">Juli 2024 – Okt 2024</span>
+                        </div>
+                        <ul class="experience-bullets">
+                            <li>Membimbing 72 siswa dalam praktik instalasi motor listrik dan instalasi penerangan listrik dengan tingkat keberhasilan evaluasi kompetensi mencapai 85%.</li>
+                            <li>Mendemonstrasikan teknik instalasi listrik sesuai standar PUIL (Persyaratan Umum Instalasi Listrik) untuk mempersiapkan siswa menghadapi standar kebutuhan dunia kerja & konstruksi.</li>
+                            <li>Menyusun materi pembelajaran berbasis kompetensi dan mengelola dokumen administrasi pembelajaran secara terstruktur.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section bg-alt" id="skills">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <div class="section-subtitle">Keahlian & Alat</div>
+                <h2 class="section-title">Kemampuan Teknis & Software</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Electrical & CAD Software -->
+                <div class="skill-card">
+                    <h3 class="skill-card-title">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        Software Teknik & CAD
+                    </h3>
+                    <div class="skills-tags">
+                        <span class="tag highlight">Cadence Allegro</span>
+                        <span class="tag highlight">AutoCAD</span>
+                        <span class="tag">Autodesk Inventor</span>
+                        <span class="tag">ETAP</span>
+                        <span class="tag">DiaLux</span>
+                        <span class="tag">Proteus</span>
+                    </div>
+                </div>
+
+                <!-- Automation & Control -->
+                <div class="skill-card">
+                    <h3 class="skill-card-title">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                        Otomasi & Pemrograman
+                    </h3>
+                    <div class="skills-tags">
+                        <span class="tag highlight">CX Programmer (PLC)</span>
+                        <span class="tag">ZelioSoft</span>
+                        <span class="tag">Fluidsim (Pneumatik)</span>
+                        <span class="tag">Arduino IDE</span>
+                        <span class="tag">Flexible Manufacturing System</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills & Methodologies -->
+                <div class="skill-card">
+                    <h3 class="skill-card-title">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        Non-Teknis & Bahasa
+                    </h3>
+                    <div class="skills-tags">
+                        <span class="tag">Pemecahan Masalah</span>
+                        <span class="tag">Kerjasama Tim</span>
+                        <span class="tag">Komunikasi Efektif</span>
+                        <span class="tag">Manajemen Waktu</span>
+                        <span class="tag">Bahasa Indonesia (Native)</span>
+                        <span class="tag">Bahasa Inggris (Basic)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="section" id="education">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <div class="section-subtitle">Kualifikasi</div>
+                <h2 class="section-title">Pendidikan & Sertifikasi</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="cert-edu-grid">
+                <!-- Education Box -->
+                <div class="info-box">
+                    <div class="info-box-header">
+                        <div class="info-box-icon">
+                            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.25rem;">Universitas Negeri Yogyakarta</h3>
+                            <p style="color: var(--accent-blue); font-weight: 600;">S1 Pendidikan Teknik Elektro</p>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); margin-bottom: 0.8rem;">
+                        <strong>Periode:</strong> Sep 2021 – Des 2025 <br>
+                        <strong>Konsentrasi:</strong> Otomasi Industri <br>
+                        <strong>IPK:</strong> <span style="color: #fff; font-weight: bold;">3.69 / 4.00</span>
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        <strong>Mata Kuliah Relevan:</strong> Otomasi Industri, Flexible Manufacturing System, Perencanaan Otomasi Industri, Manajemen Industri.
+                    </p>
+                </div>
+
+                <!-- Certification Box -->
+                <div class="info-box">
+                    <div class="info-box-header">
+                        <div class="info-box-icon">
+                            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.25rem;">Sertifikasi Profesional</h3>
+                            <p style="color: var(--accent-blue); font-weight: 600;">Keselamatan & Kesehatan Kerja</p>
+                        </div>
+                    </div>
+                    <h4>Ahli Keselamatan dan Kesehatan Kerja Umum (AK3U)</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px;">
+                        Diterbitkan oleh: <strong>Kemenaker RI</strong>
+                    </p>
+                    <div class="cert-badge">✓ Certified General OHS Expert</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section bg-alt" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <h2 style="font-size: 2.2rem; margin-bottom: 0.8rem;">Mari Bekerja Sama</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem;">
+                    Apakah Anda mencari CAD Designer, Engineer Otomasi, atau Teknisi Kelistrikan yang dapat diandalkan? Jangan ragu untuk menghubungi saya!
+                </p>
+
+                <div class="contact-grid">
+                    <a href="https://wa.me/6285643372457" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        </div>
+                        <span>Telepon / WhatsApp</span>
+                        <strong>+62 856 4337 2457</strong>
+                    </a>
+
+                    <a href="mailto:faturdwiadrianto@gmail.com" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </div>
+                        <span>Email</span>
+                        <strong>faturdwiadrianto@gmail.com</strong>
+                    </a>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        </div>
+                        <span>Lokasi</span>
+                        <strong>Kulon Progo, DI Yogyakarta</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Fatur Dwi Adrianto. All rights reserved. S1 Pendidikan Teknik Elektro UNY.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
